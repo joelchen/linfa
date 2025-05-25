@@ -10,6 +10,9 @@ use std::marker::PhantomData;
 
 use super::algorithm::DecisionTree;
 
+#[cfg(feature = "serde")]
+use serde_crate::{Deserialize, Serialize};
+
 #[cfg_attr(
     feature = "serde",
     derive(Serialize, Deserialize),
