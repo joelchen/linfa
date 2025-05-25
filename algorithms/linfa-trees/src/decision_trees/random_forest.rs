@@ -10,6 +10,11 @@ use std::marker::PhantomData;
 
 use super::algorithm::DecisionTree;
 
+#[cfg_attr(
+    feature = "serde",
+    derive(Serialize, Deserialize),
+    serde(crate = "serde_crate")
+)]
 #[derive(Debug, Clone)]
 pub struct RandomForestClassifier<F: Float> {
     trees: Vec<DecisionTree<F, usize>>,
